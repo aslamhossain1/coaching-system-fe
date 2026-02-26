@@ -15,8 +15,8 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Coaching Management SaaS",
-  description: "Modern role-based dashboards for coaching management",
+  title: "Edutrack | Coaching Management SaaS",
+  description: "Edutrack modern role-based dashboards for coaching management",
 };
 
 export default function RootLayout({ children }) {

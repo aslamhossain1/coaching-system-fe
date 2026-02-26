@@ -1,15 +1,7 @@
 // @ts-nocheck
 import Link from "next/link";
-
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Features", href: "#features" },
-  { label: "Package & Pricing", href: "#pricing" },
-  { label: "Templates", href: "#templates" },
-  { label: "Plugins", href: "#plugins" },
-  { label: "About us", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import Image from "next/image";
+import MarketingHeader from "@/components/marketing/MarketingHeader";
 
 const features = [
   ["AT", "Student Attendance", "Mark class or subject attendance quickly from desktop and mobile."],
@@ -56,59 +48,9 @@ export default function HomePage() {
         <div className="absolute -right-24 top-32 h-[26rem] w-[26rem] rounded-full bg-indigo-200/40 blur-3xl" />
       </div>
 
-      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <Link href="/" className="flex items-center gap-2.5">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-indigo-600 text-sm font-bold text-white">
-              ED
-            </span>
-            <div>
-              <p className="text-[30px] leading-none font-semibold tracking-tight text-[#1f5583] font-[var(--font-poppins)]">Edufy</p>
-              <p className="text-xs text-slate-500">Coaching Management SaaS</p>
-            </div>
-          </Link>
+      <MarketingHeader activePath="/" />
 
-          <nav className="hidden items-center gap-6 text-[15px] font-medium text-slate-700 lg:flex">
-            {navLinks.map((item) => (
-              <a key={item.label} href={item.href} className="transition hover:text-cyan-600">
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="hidden items-center gap-3 lg:flex">
-            <Link href="/login" className="rounded-xl border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
-              Login
-            </Link>
-            <button className="rounded-xl bg-gradient-to-r from-indigo-700 to-cyan-500 px-5 py-2.5 text-sm font-semibold text-white">Request a demo</button>
-          </div>
-
-          <details className="relative lg:hidden">
-            <summary className="flex h-10 w-10 list-none items-center justify-center rounded-xl border border-slate-300 bg-white text-slate-700 [&::-webkit-details-marker]:hidden">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
-                <path d="M3 6h18" />
-                <path d="M3 12h18" />
-                <path d="M3 18h18" />
-              </svg>
-            </summary>
-            <div className="absolute right-0 mt-2 w-64 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
-              {navLinks.map((item) => (
-                <a key={item.label} href={item.href} className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
-                  {item.label}
-                </a>
-              ))}
-              <Link href="/login" className="mt-2 block rounded-lg border border-slate-300 px-3 py-2 text-center text-sm font-semibold text-slate-700">
-                Login
-              </Link>
-              <button className="mt-2 w-full rounded-lg bg-gradient-to-r from-indigo-700 to-cyan-500 px-3 py-2 text-sm font-semibold text-white">
-                Request a demo
-              </button>
-            </div>
-          </details>
-        </div>
-      </header>
-
-      <section id="home" className="relative overflow-hidden bg-gradient-to-r from-[#060b67] via-[#16518f] to-[#21c39d]">
+      <section id="home" className="relative overflow-hidden bg-gradient-to-r from-[#060b67] via-[#16518f] to-[#21c39d] pt-28 sm:pt-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(255,255,255,0.2),transparent_38%)]" />
         <div className="mx-auto grid min-h-[78vh] w-full max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_0.95fr] lg:px-8 lg:py-16">
           <div className="relative z-10 text-white rise-in">
@@ -222,7 +164,7 @@ export default function HomePage() {
 
       <section id="about" className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          <h2 className="text-4xl font-semibold leading-tight text-slate-900 font-[var(--font-poppins)] sm:text-5xl">Why Edufy Is the Smartest Choice for Educational Institutes</h2>
+          <h2 className="text-4xl font-semibold leading-tight text-slate-900 font-[var(--font-poppins)] sm:text-5xl">Why Edutrack Is the Smartest Choice for Educational Institutes</h2>
           <p className="mt-5 text-base leading-relaxed text-slate-600">Smart management software, mobile access, and reliable support in one system.</p>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
@@ -286,9 +228,9 @@ export default function HomePage() {
         <div className="mx-auto grid w-full max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/20 text-sm font-bold text-white">ED</span>
+              <Image src="/edutrack-logo.svg" alt="Edutrack logo" width={40} height={40} className="h-10 w-10" />
               <div>
-                <p className="text-3xl leading-none font-semibold tracking-tight font-[var(--font-poppins)]">Edufy</p>
+                <p className="text-3xl leading-none font-semibold tracking-tight font-[var(--font-poppins)]">Edutrack</p>
                 <p className="text-xs text-white/80">Smart Coaching Management System</p>
               </div>
             </div>
@@ -312,11 +254,11 @@ export default function HomePage() {
           <div>
             <h3 className="text-2xl font-semibold font-[var(--font-poppins)]">Contact</h3>
             <div className="mt-4 space-y-2 text-base text-blue-100">
-              <p>sales@edufy.com.bd</p><p>+8801894431218</p><p>Dhaka, Bangladesh</p>
+              <p>sales@edutrack.com</p><p>+8801894431218</p><p>Dhaka, Bangladesh</p>
             </div>
           </div>
         </div>
-        <div className="border-t border-white/15 py-4 text-center text-sm text-blue-100">Copyright {new Date().getFullYear()} Edufy. All rights reserved.</div>
+        <div className="border-t border-white/15 py-4 text-center text-sm text-blue-100">Copyright {new Date().getFullYear()} Edutrack. All rights reserved.</div>
       </footer>
     </main>
   );

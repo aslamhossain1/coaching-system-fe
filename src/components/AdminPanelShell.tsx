@@ -55,7 +55,7 @@ export default function AdminPanelShell({ children }) {
       titleMap={titleMap}
       defaultTitle="Dashboard"
       workspaceLabel="Coaching Admin"
-      workspaceName="Edufy Style Panel"
+      workspaceName="Edutrack Admin Panel"
       profileMenuItems={profileMenuItems}
     >
       {children}
